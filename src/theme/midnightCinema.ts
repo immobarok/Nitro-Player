@@ -41,3 +41,4 @@ export type GlassVariant = 'smoked' | 'elevated' | 'hud' | 'accent' | 'amber';
 
 export const PLAYBACK_SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 2] as const;
 export const QUALITY_TIERS = ['Auto (4K)', '2160p HDR', '1080p', '720p'] as const;
+

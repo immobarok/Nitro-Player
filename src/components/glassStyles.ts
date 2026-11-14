@@ -45,3 +45,4 @@ export function getGlassVariantConfig(
 ): GlassVariantStyleConfig {
   return VARIANT_TABLE[variant];
 }
+

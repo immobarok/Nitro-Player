@@ -1,5 +1,13 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const reactNativeWebPath = path.resolve(
+  __dirname,
+  'node_modules/react-native-web',
+);
 
 const extensions = [
   '.web.tsx',
@@ -23,7 +31,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       extensions,
       alias: {
-        'react-native': 'react-native-web',
+        'react-native': reactNativeWebPath,
       },
     },
     define: {
@@ -32,7 +40,14 @@ export default defineConfig(({ mode }) => {
       DEV: JSON.stringify(isDev),
     },
     optimizeDeps: {
-      extensions,
+      rolldownOptions: {
+        resolve: {
+          extensions,
+          alias: {
+            'react-native': reactNativeWebPath,
+          },
+        },
+      },
     },
   };
 });

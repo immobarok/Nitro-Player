@@ -68,3 +68,4 @@ export interface VideoStageProps {
   onPlayStateSync: (playing: boolean) => void;
   onDropFiles?: (files: FileList) => void;
 }
+

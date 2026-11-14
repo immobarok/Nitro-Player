@@ -153,3 +153,4 @@ export function formatTimecode(totalSeconds: number): string {
   }
   return `${mm}:${ss}`;
 }
+

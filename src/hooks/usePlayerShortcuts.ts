@@ -11,3 +11,4 @@ export interface ShortcutHandlers {
 export function usePlayerShortcuts(_handlers: ShortcutHandlers): void {
   // Keyboard shortcuts are handled on web via usePlayerShortcuts.web.ts
 }
+
