@@ -7,5 +7,11 @@ AppRegistry.registerComponent(appName, () => App);
 
 const rootTag = document.getElementById('root');
 if (rootTag) {
-  AppRegistry.runApplication(appName, { rootTag });
+  // react-native-web expects an HTMLElement rootTag while RN's RootTag type is opaque
+  AppRegistry.runApplication(appName, {
+    rootTag: rootTag as unknown as Parameters<
+      typeof AppRegistry.runApplication
+    >[1]['rootTag'],
+    initialProps: {},
+  });
 }

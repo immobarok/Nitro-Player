@@ -5,14 +5,14 @@ export interface LocalFilePickerHandle {
 }
 
 interface LocalFilePickerProps {
-  onFilesSelected?: (files: unknown) => void;
+  onFilesSelected?: (files: FileList) => void;
   onNativeUnsupported?: () => void;
 }
 
 export const LocalFilePicker = React.forwardRef<
   LocalFilePickerHandle,
   LocalFilePickerProps
->(function LocalFilePicker({ onNativeUnsupported }, ref) {
+>(function LocalFilePickerImpl({ onNativeUnsupported }, ref) {
   useImperativeHandle(ref, () => ({
     open: () => {
       onNativeUnsupported?.();

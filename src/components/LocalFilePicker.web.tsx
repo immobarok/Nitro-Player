@@ -11,7 +11,7 @@ interface LocalFilePickerProps {
 export const LocalFilePicker = React.forwardRef<
   LocalFilePickerHandle,
   LocalFilePickerProps
->(function LocalFilePicker({ onFilesSelected }, ref) {
+>(function LocalFilePickerImpl({ onFilesSelected }, ref) {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useImperativeHandle(ref, () => ({

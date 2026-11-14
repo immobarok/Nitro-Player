@@ -70,7 +70,7 @@ export function VideoStage({
           style={StyleSheet.absoluteFill}
         />
       ) : null}
-      <View style={styles.scrim} />
+      <View style={[StyleSheet.absoluteFill, styles.scrim]} />
 
       <View style={styles.topRow}>
         <GlassPanel variant="hud" style={styles.pill}>
@@ -172,7 +172,6 @@ const styles = StyleSheet.create({
     aspectRatio: 21 / 9,
   },
   scrim: {
-    ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(10, 10, 14, 0.46)',
   },
   topRow: {

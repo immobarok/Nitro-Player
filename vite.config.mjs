@@ -32,12 +32,7 @@ export default defineConfig(({ mode }) => {
       DEV: JSON.stringify(isDev),
     },
     optimizeDeps: {
-      esbuildOptions: {
-        resolveExtensions: extensions,
-        loader: {
-          '.js': 'jsx',
-        },
-      },
+      extensions,
     },
   };
 });

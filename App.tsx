@@ -42,10 +42,7 @@ import {
 function App() {
   return (
     <SafeAreaProvider>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor={MIDNIGHT_CINEMA.bgVoid}
-      />
+      <StatusBar barStyle="light-content" />
       <NitroPlayerStudio />
     </SafeAreaProvider>
   );

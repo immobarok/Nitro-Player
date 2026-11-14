@@ -14,23 +14,19 @@ export function AmbientBackdrop({
   enabled,
 }: AmbientBackdropProps) {
   return (
-    <View pointerEvents="none" style={styles.root}>
+    <View pointerEvents="none" style={[StyleSheet.absoluteFill, styles.root]}>
       <View
         style={[
           styles.orbTopLeft,
-          {
-            backgroundColor: accentColor,
-            opacity: enabled ? 0.2 : 0.08,
-          },
+          { backgroundColor: accentColor },
+          enabled ? styles.orbTopEnabled : styles.orbTopDim,
         ]}
       />
       <View
         style={[
           styles.orbBottomRight,
-          {
-            backgroundColor: secondaryGlow,
-            opacity: enabled ? 0.16 : 0.06,
-          },
+          { backgroundColor: secondaryGlow },
+          enabled ? styles.orbBottomEnabled : styles.orbBottomDim,
         ]}
       />
     </View>
@@ -39,7 +35,6 @@ export function AmbientBackdrop({
 
 const styles = StyleSheet.create({
   root: {
-    ...StyleSheet.absoluteFillObject,
     backgroundColor: MIDNIGHT_CINEMA.bgVoid,
     overflow: 'hidden',
   },
@@ -58,5 +53,17 @@ const styles = StyleSheet.create({
     width: 420,
     height: 420,
     borderRadius: 210,
+  },
+  orbTopEnabled: {
+    opacity: 0.2,
+  },
+  orbTopDim: {
+    opacity: 0.08,
+  },
+  orbBottomEnabled: {
+    opacity: 0.16,
+  },
+  orbBottomDim: {
+    opacity: 0.06,
   },
 });
